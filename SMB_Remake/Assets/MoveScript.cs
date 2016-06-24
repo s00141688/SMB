@@ -10,7 +10,7 @@ public class MoveScript : MonoBehaviour
     //This is how quickly we MoveTowards the input axis.
     public float smoothSpeed = 100f;
 
-    //The maximum we want our input axis to reach. Setting this lower will rotate the platform less, and higher will be more.
+    //The maximum input axis to reach. Setting this lower will rotate the platform less, and higher will be more.
     public float multiplier = 100f;
     private float hSmooth = 0f;
     private float vSmooth = 0f;
