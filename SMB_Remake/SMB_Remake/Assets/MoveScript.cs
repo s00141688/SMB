@@ -6,11 +6,11 @@ public class MoveScript : MonoBehaviour
 
     //A bool to enable or disable smooth mode.
     public bool smoothMotion = true;
-
+    
     //This is how quickly we MoveTowards the input axis.
     public float smoothSpeed = 100f;
 
-    //The maximum we want our input axis to reach. Setting this lower will rotate the platform less, and higher will be more.
+    //The maximum input axis to reach. Setting this lower will rotate the platform less, and higher will be more.
     public float multiplier = 100f;
     private float hSmooth = 0f;
     private float vSmooth = 0f;
@@ -22,6 +22,8 @@ public class MoveScript : MonoBehaviour
         //Get Vertical and Horizontal axis from Input
         h = Input.GetAxis("Horizontal") * multiplier;
         v = Input.GetAxis("Vertical") * multiplier;
+
+        
 
     }
 

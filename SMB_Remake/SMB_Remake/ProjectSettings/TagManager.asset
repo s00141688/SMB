@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - player
+  - gameObject
+  - Pick Up
   - New Tag
   layers:
   - Default
