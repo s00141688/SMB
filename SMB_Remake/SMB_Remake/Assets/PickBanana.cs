@@ -18,9 +18,9 @@ public class PickBanana : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         AudioSource.PlayClipAtPoint(bananaSound, transform.position);
-        //int score = int.Parse(bananaText.text) + 1;
-        //bananaText.text = score.ToString();
-        count = count +1;
+        //count = int.Parse(bananaText.text) + 1;
+        //bananaText.text = count.ToString();
+        count = count++;
         SetCountText();
         Destroy(gameObject);
 
