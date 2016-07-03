@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        timeText.text = 6.ToString();
+        timeText.text = 60.ToString();
         InvokeRepeating("ReduceTime", 1, 1);
     }
 
