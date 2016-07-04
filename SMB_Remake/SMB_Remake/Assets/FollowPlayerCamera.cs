@@ -3,8 +3,8 @@ using System.Collections;
 
 public class FollowPlayerCamera : MonoBehaviour
 {
-    public GameObject player;
-    private Vector3 playerOffset;
+        public GameObject player;
+        private Vector3 playerOffset;
 
     // Use this for initialization
     void Start()

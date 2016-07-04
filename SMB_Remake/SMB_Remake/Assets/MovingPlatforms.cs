@@ -7,16 +7,16 @@ public class MovingPlatforms : MonoBehaviour {
     public Transform position1;
     public Transform position2;
     public Vector3 newPosition;
-
-    private string currentState; //statemachine 
+    private string currentState = ""; //stateholder
     public float smooth;
     public float resetTime;
 
 	// Use this for initialization
 	void Start()
     {
-        ChangeTarget();
-	}
+        //ChangeTarget();
+        InvokeRepeating("ChangeTarget", resetTime, 2);          //should this 2 not be number of times runthrough but seems to be the wait time???
+    }
 	
 	// Update run at consistent interval
 	void FixedUpdate()
@@ -26,24 +26,23 @@ public class MovingPlatforms : MonoBehaviour {
 
     void ChangeTarget()
     {
-        if (currentState == "Moving to platform 1")
+        if (currentState == "")
         {
-            currentState = "Movng to platform 2";
             newPosition = position2.position;
-        }
-
-        else if (currentState == "Moving to platform 2")
-        {
             currentState = "Moving to platform 1";
-            newPosition = position1.position;
         }
-
-        else if (currentState == "")
+        else if (currentState == "Moving to platform 1")
         {
-            currentState = "Moving to platform 2";
-            newPosition = position2.position;
+            newPosition = position1.position;
+            currentState = "Movng to platform 2";
         }
-
-        Invoke("ChangeTarget", resetTime);      //auto repets the method
+        else if (currentState == "Moving to platform 2")
+        {            
+            newPosition = position2.position;
+            currentState = "Moving to platform 1";
+        }
+       
+        /* Invoke("ChangeTarget", resetTime);*/      //auto repeats the method
+        //InvokeRepeating("ChangeTarget", 1, 100);
     }
 }
